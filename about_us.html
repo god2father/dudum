@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>崇法APP官网 - 免费法律咨询,在线咨询律师,找律师打官司,专业法律服务平台</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="keywords" content="法律咨询,律师">
+    <meta name="description" content="崇法APP一款免费的专业法律服务应用，通过崇法可以查看附近在线律师，涵盖全国知名律师,及时高效的帮助您解决生活中的法律问题。律师通过崇法可以查看附近用户的法律咨询,第一时间获取案源,提升知名度,完善个人品牌。">
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <link href="css/about.css" rel="stylesheet" type="text/css">
+</head>
+<body class="main">
+<div class="top-bar">
+    <a href="index.html" class="back-btn"><img src="images/icon_back.png"> </a>
+    <span>关于我们</span>
+</div>
+<div class="about-us-content">
+
+    <div class="icon-about"><img src="images/icon_guanyu_b@2x.png" alt=""></div>
+    <h2 class="about-us-title">2.0.1</h2>
+    <p>嘟嘟律师，是徐州崇法网络科技有限公司自主研发的一款法律电话咨询服务软件。</p>
+    <p>嘟嘟为用户解决找律师难，咨询服务费高，律师专业领域不对口等问题。</p>
+    <p>注册成为嘟嘟用户可以通过app查看附近律师并通过电话功能及时沟通处理生活中的法律问题，本平台律师都是通过实名认证的专业律师，每个案件都会有法务专员跟进。解决您的法律问题，是我们的最终目标！</p>
+</div>
+<a href="#" class="down-load-now">立即下载</a>
+<script src="http://libs.baidu.com/jquery/1.11.1/jquery.min.js"></script>
+<script>
+    //判断设备系统设置下载地址
+    var ua = navigator.userAgent.toLowerCase();
+    var downLoadUrl=''
+    if (ua.match(/MicroMessenger/i)=="micromessenger") {
+        downLoadUrl = "http://www.chongfa.cn/wxapp";
+    } else {
+        if (ua.match(/(iPhone|iPod|iPad);?/i)) {
+            downLoadUrl = "http://www.chongfa.cn/downjump/ios";
+        } else {
+            downLoadUrl = "http://www.chongfa.cn/downjump/android";
+        }
+    }
+    $('.down-load-now').attr('href',downLoadUrl)
+</script>
+</body>
+</html>

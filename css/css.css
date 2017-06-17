@@ -1,0 +1,463 @@
+*{margin:0;padding:0;font-size:100%;}
+/* 禁用iPhone中Safari的字号自动调整 */
+html {
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+}
+/* 去除iPhone中默认的input样式 */
+input[type="submit"],
+
+input[type="reset"],
+
+input[type="button"]{-webkit-appearance:none; resize: none;outline: none;}
+/* 取消链接高亮  */
+body,div,ul,li,ol,h1,h2,h3,h4,h5,h6,input,textarea,select,p,dl,dt,dd,a,img,button,form,table,th,tr,td,tbody,article,
+aside, details,figcaption,figure,footer,header, menu,nav,section{ -webkit-tap-highlight-color:rgba(0, 0, 0, 0); }
+/* 设置HTML5元素为块 */
+article, aside, details,figcaption,figure,footer,header,menu,nav,section {
+    display: block;
+}
+/* 图片自适应 */
+img {
+    max-width: 100%;
+    height: auto;
+    width:auto\9; /* ie8 */
+    -ms-interpolation-mode:bicubic;/*为了照顾ie图片缩放失真*/
+}
+/* 初始化 */
+body,div,ul,li,ol,h1,h2,h3,h4,h5,h6,input,textarea,select,p,dl,dt,dd,a,img,button,form,table,th,tr,td,tbody,article,
+aside, details,figcaption,figure,footer,header, menu,nav,section{margin:0; padding:0; border:none;}
+body{font-family:Microsoft YaHei,Tahoma,Arial,sans-serif; color:#555;
+    margin: 0 auto;
+    /*max-width: 640px;*/
+    min-width: 320px;
+    position: relative;
+    background: #FFFFFF;}
+em,i{font-style:normal;}
+strong{font-weight: normal;}
+.clearfix:after{content:""; display:block; visibility:hidden; height:0; clear:both;}
+.clearfix{zoom:1;}
+a{text-decoration:none!important; }
+ul,ol{list-style:none;}
+h1, h2, h3, h4, h5, h6{ font-size:100%; }
+img{border: none;}
+.scope{min-width:320px; max-width:540px;}
+/*以下是不同屏幕大小是字体的变化*/
+@media all and (min-width: 640px)
+{
+    html{
+        font-size:18px!important;
+    }
+}
+@media (min-width: 520px) and (max-width: 640px)
+{
+
+    html{
+        font-size:16px!important;
+    }
+}
+@media (min-width: 480px) and (max-width: 520px)
+{
+
+    html{
+        font-size:14px!important;
+    }
+}
+@media (min-width: 320px) and (max-width: 480px)
+{
+
+    html{
+        font-size:12px!important;
+    }
+}
+/*@media screen and (min-width: 640px){*/
+/*body{*/
+/*width: 640px!important;*/
+/*margin: 0 auto;*/
+/*}*/
+
+/*}*/
+body{
+    /*background: url("../images/all-bg.jpg") no-repeat;*/
+    background-size: cover;
+}
+
+#fullPage-nav { _display: none; font-size: 12px;display: none}
+
+#fullPage-nav li { width: 90px; height: 21px; margin: 10px 0 0; vertical-align: middle;}
+
+#fullPage-nav li a { float: right; width: 21px; height: 21px; color: #8F9DA4; text-decoration: none; text-align: right; background: url(../images/dot.png) 5px 5px no-repeat;}
+
+#fullPage-nav li .active { background-position: 0 bottom;}
+
+#fullPage-nav span { display: none;}
+
+.fullPage-tooltip { float: left; top: 0; margin-right: 5px; font: 12px "Microsoft Yahei"; color: #8F9DA4; line-height: 21px;}
+
+
+
+.section { position: relative; overflow: hidden;}
+
+.section .bg { position: absolute; left: 0; top: 0; width: 100%; height: 100%;}
+
+.section .bg img { display: block; width: 100%; height: 100%;}
+.img100{width: 100%}
+.bg1{
+    background: url("../images/bg1.png") no-repeat 50% ;
+    background-size:contain;
+}
+.bg2{
+    background: url("../images/bg2.png") no-repeat 50% ;
+    background-size:contain;
+}
+.m-section1-logo {
+    position: absolute;
+    top: -100%;
+    left:4%;
+    /*width: 60%;*/
+    /*height:700px;*/
+    transition: all 1.4s;
+    opacity: 0;
+}
+.m-section1-logo img{
+    width: 100%;
+}
+.active .m-section1-logo {
+    top: 4%;
+    opacity: 1;
+    transition-delay: 0.5s;
+}
+.m-section1-phone{
+    position: absolute;
+    bottom: 8%;
+    left:-100%;
+    right: 50%;
+    width: 70%;
+    margin-left: -35%;
+    transition: all 1.4s;
+    opacity: 0;
+}
+.m-section1-phone img{
+    width: 100%;
+}
+.active1 .m-section1-phone {
+    opacity: 1;
+    left: 50%;
+    transition-delay: 0.6s;
+}
+.active .m-section1-cloud h1{
+    opacity: 1;
+    transition-delay: 1.2s;
+}
+.active .m-section1-cloud{
+    bottom: -12%;
+    /*opacity: 1;*/
+    transition-delay: 0.5s;
+}
+.m-section1-btn{
+    width: 60%;
+    margin: 1rem auto;
+    transition: all 1.4s;
+    opacity: 0;
+}
+.active .m-section1-btn{
+    opacity: 1;
+    transition-delay: 1.4s;
+}
+.m-section1-btn a{
+    display: block;
+    width: 100%;
+    margin-bottom: .5rem;
+}
+@keyframes fade-in {
+    0% {opacity: .8;}
+    40% {opacity: .8;}
+    80%{opacity: .1;}
+    100% {opacity: .8;}
+}
+.next-btn{
+    position: absolute;
+    bottom: 2%;
+    left: 50%;
+    margin-left: -5%;
+    display: block;
+    width:10%;
+    animation:fade-in 2s infinite;
+    z-index: 999;
+}
+
+.s2-txt{
+    position: absolute;
+    top: -100%;
+    left:0;
+    width: 100%;
+    transition: all 1.4s;
+    opacity: 0;
+    text-align: center;
+    z-index: 222;
+}
+.s2-txt p{
+    font-size: 1.6rem;
+    color: #fff;
+
+}
+.s2-txt h1{
+    font-size: 3rem;
+    color: #fff;
+    font-weight: normal;
+    text-align: center;
+}
+.active .s2-txt{
+    top:2%;
+    opacity: 1;
+}
+.s2-phone{
+    position: absolute;
+    bottom: -100%;
+    left:50%;
+    margin-left: -35%;
+    width: 70%;
+    transition: all 1.4s;
+    opacity: 0;
+}
+.active .s2-phone{
+    opacity: 1;
+    bottom: 8%;
+    transition-delay: 0.7s;
+}
+.s2-phone-pet{
+    position: absolute;
+    bottom:10%;
+    left:68%;
+    width: 30%;
+    transition: all 1.4s;
+    opacity: 0;
+}
+.active .s2-phone-pet{
+    opacity: 1;
+    transition-delay: 1.7s;
+}
+.s3-phone-pet{
+    position: absolute;
+    bottom:10%;
+    left:15%;
+    width: 30%;
+    transition: all 1.4s;
+    opacity: 0;
+}
+.active .s3-phone-pet{
+    opacity: 1;
+    transition-delay: 1.7s;
+}
+.s4-phone-pet{
+    position: absolute;
+    bottom:55%;
+    left:65%;
+    width: 30%;
+    transition: all 1.4s;
+    opacity: 0;
+}
+.active .s4-phone-pet{
+    opacity: 1;
+    transition-delay: 1.7s;
+}
+.s5-phone-pet{
+    position: absolute;
+    bottom:33%;
+    left:5%;
+    width: 25%;
+    transition: all 1.4s;
+    opacity: 0;
+}
+.active .s5-phone-pet{
+    opacity: 1;
+    transition-delay: 1.7s;
+}
+
+
+
+@media screen and (min-width: 640px){
+    .active .m-section1-phone{
+        bottom: -10%;
+    }
+    .active .m-section1-cloud{
+        bottom: -10%;
+        /*opacity: 1;*/
+        transition-delay: 0.5s;
+    }
+    .m-section1-btn{
+        width: 40%;
+    }
+    .s2-phone{
+        width: 50%!important;
+        margin-left: -25%!important;
+    }
+    .s2-phone-pet{
+        width: 25%!important;
+        left: 65%!important;
+    }
+    .s3-phone-pet{
+        width: 25%!important;
+        left: 20%!important;
+    }
+    .s4-phone-pet{
+        bottom:60%;
+        width: 25%!important;
+        left: 63%!important;
+    }
+    .s5-phone-pet{
+        bottom:33%;
+        width: 25%!important;
+        left: 10%!important;
+    }
+}
+@media (min-width: 320px) and (max-width: 480px)
+{
+    .m-section1-cloud h1{
+        font-size: 1.8rem;
+    }
+}
+/*20170525*/
+.menu{
+    position: fixed;
+    top:5%;
+    left: 0;
+    right:0;
+    padding: 0 20px 0 0;
+    text-align: right;
+    z-index: 9999;
+}
+.menu-btn{
+    display: inline-block;
+    width: 20px;
+}
+.menu-btn img{
+    width: 100%;
+}
+.download-btn{
+    width: 80%;
+    display: block;
+    padding: 10px 0;
+    text-align: center;
+    color:#fff;
+    font-size: 1.2rem;
+    background: #29adfb;
+    border-radius: 8px;
+    margin-top:2rem;
+    position: relative;
+    font-weight: bold;
+}
+.menu-text{
+    position: absolute;
+    padding: 10px 5px;
+    background: rgba(0,0,0,.4);
+    right: 10px;
+    top:140%;
+    text-align: center;
+    border-radius: 4px;
+}
+.menu-text p{
+    text-align: center;
+    padding: 5px 20px;
+
+}
+.menu-text p:first-child{
+    border-bottom: 1px solid rgba(191, 192, 193, 0.25);
+}
+.menu-text a{
+    color: #fff;
+
+}
+.menu-text:before{
+    content: '';
+    position: absolute;
+    right: 12px;
+    bottom: 100%;
+    margin-left: -7px;
+    border: 7px solid transparent;
+    border-bottom-color: rgba(0,0,0,.4);
+}
+.menu-text:after{
+    content: '';
+    position: absolute;
+    right: 12px;
+    bottom: 100%;
+    margin-left: -7px;
+    margin-top: -1px;
+    border: 7px solid transparent;
+    /*border-bottom-color: rgba(0,0,0,.4);*/
+}
+.top-txt{
+    position: absolute;
+    width: 100%;
+    left: 0;
+    right: 0;
+    top:-100%;
+    text-align: center;
+    opacity: 0;
+    transition: all 1.4s;
+}
+.top1-txt{
+    position: absolute;
+    width: 100%;
+    left: 0;
+    right: 0;
+    top:-100%;
+    text-align: center;
+    opacity: 0;
+    transition: all .7s;
+}
+.top-txt p:nth-child(1){
+    font-size: 25px;
+    color: #000;
+
+}
+.top-txt p:nth-child(2){
+    margin-top: 10px;
+    font-size: 12px;
+}
+.top1-txt p:nth-child(1){
+    font-size: 25px;
+    color: #000;
+
+}
+.top1-txt p:nth-child(2){
+    margin-top: 10px;
+    font-size: 12px;
+}
+.active1 .top1-txt{
+    top: 5%;
+    opacity: 1;
+    transition-delay: .6s;
+}
+.active .top-txt{
+    top: 5%;
+    opacity: 1;
+    transition-delay: .6s;
+}
+.rotate180{
+  transform:rotate(180deg);
+}
+.dudu-download{
+    position: absolute;
+    left: 50%;
+    margin-left: -23%;
+    bottom: 28%;
+    width: 40%;
+    padding: 10px;
+    text-align: center;
+    opacity: 0;
+    transition: all 1.4s;
+}
+.active1 .dudu-download{
+    opacity:1;
+    transition-delay: 1.6s;
+}
+.dudu-download-btn{
+    display: block;
+    text-align: center;
+    border-radius: 4px;
+    padding: 4%;
+    color: #fff;
+    background: #15c690;
+}
